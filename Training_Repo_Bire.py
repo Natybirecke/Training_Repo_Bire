@@ -4,6 +4,6 @@ streamlit.header('Breakfast Menu')
 streamlit.text('🍳🍳 Eggs 🍳🍳')
 streamlit.text('🌮🌮  Taco 🌮🌮')
 streamlit.text('🍗🍗 Meat 🍗🍗')
-streamlit.text('Injira')
+streamlit.text('🍕🍕 Pizza 🍕🍕')
 streamlit.text('🍔 Burgers 🍔🍔')
-streamlit.text('Green Burritos')
+
