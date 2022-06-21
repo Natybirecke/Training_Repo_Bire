@@ -15,7 +15,9 @@ Fruit_to_show = my_fruit_list.loc[Fruits_Selecetd]
 streamlit.dataframe(Fruit_to_show)
 import requests
 streamlit.title('Fruityvice Fruit advice')
-Fruit_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+Fruit_user_input = streamlit.text_input('what fruit do you want to have information about?' , 'kiwi')
+streamlit.write('The user entered',Fruit_user_input)
+Fruit_response = requests.get("https://fruityvice.com/api/fruit/" + Fruit_user_input)
 #streamlit.text(Fruit_response.json())
 Fruit_Normalize = pandas.json_normalize(Fruit_response.json())
 streamlit.dataframe(Fruit_Normalize)
