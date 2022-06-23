@@ -24,8 +24,7 @@ streamlit.dataframe(Fruit_Normalize)
 import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
-my_cur.execute("insert into pc_rivery_db.public.fruit_load_list
-values ('from_streamlit')")
+my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('from_streamlit')")
 my_data_row = my_cur.fetchall()
 streamlit.header("Fruit list contains:")
 streamlit.dataframe(my_data_row)
