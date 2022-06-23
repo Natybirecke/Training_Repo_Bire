@@ -1,5 +1,5 @@
 import streamlit
-#import pandas
+import pandas
 #import requests
 #import snowflake.connector
 from urllib.error import URLError
@@ -13,11 +13,11 @@ streamlit.text('🍕🍕 Pizza 🍕🍕')
 streamlit.text('🍔 Burgers 🍔🍔')
 streamlit.title('My smoothies')
 
-#my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
-#my_fruit_list = my_fruit_list.set_index('Fruit')
-#Fruits_Selecetd = streamlit.multiselect("pick some fruits:",list(my_fruit_list.index),['Avocado','Strawberries'])
-#Fruit_to_show = my_fruit_list.loc[Fruits_Selecetd]
-#streamlit.dataframe(Fruit_to_show)
+my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+my_fruit_list = my_fruit_list.set_index('Fruit')
+Fruits_Selecetd = streamlit.multiselect("pick some fruits:",list(my_fruit_list.index),['Avocado','Strawberries'])
+Fruit_to_show = my_fruit_list.loc[Fruits_Selecetd]
+streamlit.dataframe(Fruit_to_show)
 
 streamlit.title('Fruityvice Fruit advice')
 Fruit_user_input = streamlit.text_input('what fruit do you want to have information about?' , 'kiwi')
