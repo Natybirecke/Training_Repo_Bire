@@ -21,13 +21,12 @@ streamlit.dataframe(Fruit_to_show)
 
 streamlit.header('Fruityvice Fruit advice')
 try:
-  Fruit_user_input = streamlit.text_input('what fruit do you want to have information about?')
-  if not Fruit_user_input:
-    streamlit.error("please select a fruit to get information")
+  Fruit_choice = streamlit.text_input('what fruit do you want to have information about?')
+  #if not Fruit_user_input:
+    #streamlit.error("please select a fruit to get information")
   else:
-    Fruit_response = requests.get("https://fruityvice.com/api/fruit/" + Fruit_user_input)
-    Fruit_Normalize = pandas.json_normalize(Fruit_response.json())
-    streamlit.dataframe(Fruit_Normalize)
+       back_from_function = get_fruityvice_data(fruit_choice)
+       streamlit.dataframe(back_from_function )
 except URLerror as e:
     streamlit.error()
 streamlit.stop()
@@ -39,3 +38,8 @@ streamlit.header("Fruit list contains:")
 streamlit.dataframe(my_data_row)
 Fruit_add = streamlit.text_input('what fruit do you want to have?' , 'banana')
 streamlit.write('Thanks for adding',Fruit_add)
+def get_fruityvice_data(this_fruit_choice)
+    Fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
+    Fruityvice_Normalize = pandas.json_normalize(Fruityvice_response.json())
+    retun fruityvice_normalized
+    
