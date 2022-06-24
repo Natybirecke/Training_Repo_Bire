@@ -24,12 +24,12 @@ try:
   Fruit_user_input = streamlit.text_input('what fruit do you want to have information about?')
   if not Fruit_user_input:
     streamlit.error("please select a fruit to get information")
-    else:
-      Fruit_response = requests.get("https://fruityvice.com/api/fruit/" + Fruit_user_input)
-      Fruit_Normalize = pandas.json_normalize(Fruit_response.json())
-      streamlit.dataframe(Fruit_Normalize)
-      except URLerror as e:
-        streamlit.error()
+  else:
+    Fruit_response = requests.get("https://fruityvice.com/api/fruit/" + Fruit_user_input)
+    Fruit_Normalize = pandas.json_normalize(Fruit_response.json())
+    streamlit.dataframe(Fruit_Normalize)
+except URLerror as e:
+    streamlit.error()
 streamlit.stop()
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
