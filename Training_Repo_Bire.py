@@ -21,9 +21,10 @@ streamlit.dataframe(Fruit_to_show)
 
 streamlit.header('Fruityvice Fruit advice')
 try:
-Fruit_user_input = streamlit.text_input('what fruit do you want to have information about?')
+Fruit_user_input = streamlit.text_input('whatfruitdoyouwanttohaveinformationabout?')
+#Fruit_user_input = streamlit.text_input('what fruit do you want to have information about?')
 if not Fruit_user_input:
-  streamlit.error("please select a fruit to get information.")
+streamlit.error("please select a fruit to get information.")
 else:  
 Fruit_response = requests.get("https://fruityvice.com/api/fruit/" + Fruit_user_input)
 Fruit_Normalize = pandas.json_normalize(Fruit_response.json())
