@@ -18,7 +18,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 Fruits_Selecetd = streamlit.multiselect("pick some fruits:",list(my_fruit_list.index),['Avocado','Strawberries'])
 Fruit_to_show = my_fruit_list.loc[Fruits_Selecetd]
 streamlit.dataframe(Fruit_to_show)
-def get_fruityvice_data(this_fruit_choice)
+def get_fruityvice_data(this_fruit_choice):
     Fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
     Fruityvice_Normalize = pandas.json_normalize(Fruityvice_response.json())
     retun fruityvice_normalized   
