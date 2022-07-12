@@ -1,2 +1,2 @@
-pip install --upgrade python-cffi==1.15.1
+mv /home/appuser/venv/lib/python3.9/ site-packages/_cffi_backend.cpython-39-x86_64-linux-gnu.so /home/appuser/venv/lib/python3.9/ site-packages/_cffi_backend.cpython-39-x86_64-linux-gnu.so-1.15.0
 snowflake-connector-python
