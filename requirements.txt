@@ -1,2 +1,2 @@
-apt-get install python-cffi
+pip install --upgrade python-cffi==1.15.1
 snowflake-connector-python
